@@ -62,9 +62,24 @@
             max-width: 100%;
             margin-top: 20px;
             padding: 0 10px;
+            opacity: 0;
+            transform: rotateY(-30deg) translateZ(-200px);
+            animation: container3D 1s ease-out forwards;
+        }
+
+        @keyframes container3D {
+            from {
+                opacity: 0;
+                transform: rotateY(-30deg) translateZ(-200px);
+            }
+            to {
+                opacity: 1;
+                transform: rotateY(0deg) translateZ(0);
+            }
         }
 
         .subject-box {
+            perspective: 1000px;
             flex: 1 1 calc(33.333% - 30px);
             max-width: 200px;
             height: 150px;
@@ -83,8 +98,13 @@
         }
 
         .subject-box:hover {
-            transform: scale(1.1) rotate(2deg);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: rotateX(-10deg) rotateY(10deg) translateZ(10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .subject-box:active {
+            transform: translateZ(-5px) scale(0.95);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
         }
 
         @keyframes slideIn {
@@ -104,11 +124,11 @@
         .instagram-icon {
             width: 60px;
             height: 60px;
-            transition: transform 0.3s ease;
+            transition: transform 0.6s ease;
         }
 
         .instagram-icon:hover {
-            transform: scale(1.1);
+            transform: rotateY(360deg);
         }
 
         .instagram-link {
@@ -128,13 +148,13 @@
         /* Media Queries */
         @media (max-width: 900px) {
             .subject-box {
-                flex: 1 1 calc(50% - 30px);
-                height: 120px;
-                font-size: 14px;
+                flex: 1 1 calc(50% - 20px);
+                height: 140px;
+                font-size: 15px;
             }
 
             h1 {
-                font-size: 32px;
+                font-size: 30px;
             }
 
             h2 {
@@ -148,18 +168,18 @@
 
         @media (max-width: 600px) {
             .subject-box {
-                flex: 1 1 calc(100% - 30px);
-                height: 100px;
-                font-size: 12px;
+                flex: 1 1 calc(100% - 20px);
+                height: 110px;
+                font-size: 13px;
             }
 
             .instagram-icon {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
             }
 
             h1 {
-                font-size: 28px;
+                font-size: 26px;
             }
 
             h2 {
@@ -187,8 +207,8 @@
     
     <div class="instagram-container">
         <span class="follow-text">FOLLOW ME ON -> </span>
-        <a href="https://www.instagram.com/balaji_rs29?igsh=enJjbGZlMXg1aHc0" target="_blank" class="instagram-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="instagram-icon">
+        <a href="https://www.instagram.com/balaji_rs29?igsh=enJjbGZlMXg1aHc0" target="_blank" class="instagram-link" aria-label="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram icon" class="instagram-icon">
         </a>
     </div>
 
